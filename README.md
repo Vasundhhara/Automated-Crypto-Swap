@@ -16,7 +16,7 @@ Run the following commands in your terminal
 1. The current code of Swap.defillama.com doesn't have unique identifiers, classes, names making it tough to add some features which need unique identifiers/selectors.
 2. The options of the dropdowns are not created using the suggested <option> tags making it unfeasible to use ideal functions like .select .
 
-# Note: The commented code in intro.js is the code format that can be used if unique identifiers are given to dropdown options (by replacing with correct selectors).
+ Note: The commented code in intro.js is the code format that can be used if unique identifiers are given to dropdown options (by replacing with correct selectors).
 
 
 

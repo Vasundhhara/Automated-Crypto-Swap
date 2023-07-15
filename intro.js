@@ -10,8 +10,9 @@ const puppeteer = require('puppeteer');
   await page.setViewport({ width: 1366, height: 768 });
 
   // Fill the form
+
   await page.type('input[id="react-select-2-input"]', 'Arbitrum One'); 
-  await page.keyboard.press("Enter");
+  await page.keyboard.press("Enter"); //Press the Enter key
 
   
 
@@ -19,21 +20,22 @@ const puppeteer = require('puppeteer');
   await page.focus(inputFieldSelector); // Ensure the input field has focus
   await page.keyboard.down('Control'); // Press the Control key
   await page.keyboard.press('KeyA'); // Press the 'A' key
-  await page.keyboard.up('Control');
+  await page.keyboard.up('Control'); //Release the Control key
   await page.keyboard.press('Backspace'); // Press the Backspace key
   await page.type(inputFieldSelector, '12');
 
   setInterval(async () => {
-    // Wait for the element with the text "Select a route to perform a swap" to be visible
+    // Wait for the new section to be visible
     await page.waitForSelector("div.sc-bb167634-4 jrbYis");
 
     // Select the third element matching the CSS selector
     const elements = await page.$$("div.sc-bb167634-4 jrbYis");
-    if (elements.length >= 1) {
-      await elements[0].click();
+    if (elements.length >= 4) {
+      await elements[1].click();
     }
   }, 3000);
-  
+//------------------------------------------------------------------------------------------------------------------------------------------------------------ //
+        
 //  const dropdownButtonSelector = '#__next > div > div > div.sc-889ee977-0.gCbopq > main > div.sc-55ee4011-1.cZHlms > div.sc-55ee4011-3.dlZmAt > div.sc-55ee4011-0.iXoIVV > div.css-1urcov8 > div:nth-child(1) > div.css-1k491an > button';
 //   await page.click(dropdownButtonSelector);
 
@@ -47,10 +49,11 @@ const puppeteer = require('puppeteer');
 //   const desiredOptionSelector1 = '/html/body/div[7]/div[3]/div/section/div[3]/div/div[4]/div';
 //   await page.click(dropdownButtonSelector1);
 
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
 
   // Wait for form submission or any other page navigation
   await page.waitForNavigation();
-
 
   await browser.close();
   // Perform further actions or assertions if needed
